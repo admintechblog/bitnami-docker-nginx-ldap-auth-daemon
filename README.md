@@ -110,6 +110,9 @@ $ cat << EOF > conf/ldap_nginx.conf
 
          # Bind password
          proxy_set_header X-Ldap-BindPass "adminpassword";
+         
+         # LDAP search filter
+         proxy_set_header X-Ldap-Template "(cn=%(username)s)";
       }
    }
 ```
